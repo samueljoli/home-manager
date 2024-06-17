@@ -36,10 +36,27 @@
         "type": "github"
       }
     },
+    "plugin-cyberpunk": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1678292853,
+        "narHash": "sha256-IW+nVYtWdGLgxhuBxGXbxNZlFhNk0a2PpQ5AJCGvDLU=",
+        "owner": "samueljoli",
+        "repo": "cyberpunk.nvim",
+        "rev": "5a223942c652a866626b97d86d2a611dfbbf4a66",
+        "type": "github"
+      },
+      "original": {
+        "owner": "samueljoli",
+        "repo": "cyberpunk.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "plugin-cyberpunk": "plugin-cyberpunk"
       }
     }
   },

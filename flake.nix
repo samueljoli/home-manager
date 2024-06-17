@@ -7,9 +7,12 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+	plugin-cyberpunk.url = "github:samueljoli/cyberpunk.nvim";
+	plugin-cyberpunk.flake = false;
     };
 
-    outputs = {nixpkgs, home-manager, ...}: {
+    outputs = {nixpkgs, home-manager, ...}@inputs: {
         defaultPackage.aarch64-darwin = home-manager.defaultPackage.aarch64-darwin;
 
         homeConfigurations = {
@@ -17,6 +20,8 @@
                 pkgs = import nixpkgs { system = "aarch64-darwin"; };
 
                 modules = [ ./home.nix ]; # Defined later
+
+		extraSpecialArgs = { inherit inputs; };
             };
         };
     };

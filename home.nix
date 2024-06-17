@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -74,4 +74,42 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  nixpkgs = {
+   overlays = [
+      (final: prev: {
+	 vimPlugins = prev.vimPlugins // {
+	  foreign-cyberpunk-nvim = prev.vimUtils.buildVimPlugin {
+	    name = "cyberpunk";
+	    src = inputs.plugin-cyberpunk;
+	  };
+        };
+      })
+    ];
+  };
+
+  programs.neovim =
+  let
+    toLua = str: "lua << EOF\n${str}\nEOF\n";
+    toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+  in
+  {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      {
+        plugin = hop-nvim;
+        config = toLuaFile ./nvim/plugin/hop.lua;
+      }
+
+      vim-nix
+    ];
+
+    extraLuaConfig = ''
+    	${builtins.readFile ./nvim/options.lua}
+    '';
+  };
 }
