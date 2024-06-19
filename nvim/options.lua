@@ -3,7 +3,8 @@
 -- -----------------------------------------------------------------------------
 
 -- Leader
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Encoding
 vim.opt.encoding = "utf-8"
@@ -11,8 +12,24 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.fileencodings = "utf-8"
 vim.opt.ttyfast = true
 
+-- Font
+vim.g.have_nerd_font = false
+
+-- Keep signcolumn on by default
+vim.opt.signcolumn = 'yes'
+
+-- Decrease update time
+vim.opt.updatetime = 250 -- A lower updatetime value makes your editor more responsive to actions like showing diagnostics or other plugin-triggered events that rely on the CursorHold event
+
 -- Fix backspace indent
 vim.opt.backspace = { "indent", "eol", "start" }
+vim.opt.breakindent = true
+
+-- Save undo history
+vim.opt.undofile = true
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
 
 -- Mouse support
 vim.opt.mouse = "a"
@@ -33,7 +50,7 @@ else
     end
 end
 
--- File navigation
+-- Inner file navigation
 vim.opt.relativenumber = true
 vim.opt.ruler = true
 vim.opt.number = true
@@ -48,6 +65,12 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = true
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- No swap files
 vim.opt.swapfile = false
@@ -66,6 +89,17 @@ vim.opt.wildmenu = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
 vim.opt.shortmess:remove("S")
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- Set highlight on search, but clear on pressing <Esc> in normal mode
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
 
 -- GF (Go to file)
 vim.opt.path:append("$PWD/node_modules")
@@ -75,12 +109,21 @@ vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
--- Mappings
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
 -- j/k/h/l to switch panes
-vim.api.nvim_set_keymap("n", "<C-j>", "<C-W>j", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-k>", "<C-W>k", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-h>", "<C-W>h", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-l>", "<C-W>l", { noremap = true })
+vim.keymap.set("n", "<C-j>", "<C-W>j", { noremap = true, desc = "Move to the window below" })
+vim.keymap.set("n", "<C-k>", "<C-W>k", { noremap = true, desc = "Move to the window above" })
+vim.keymap.set("n", "<C-h>", "<C-W>h", { noremap = true, desc = "Move to the window on the left" })
+vim.keymap.set("n", "<C-l>", "<C-W>l", { noremap = true, desc = "Move to the window on the right" })
+-- vim.api.nvim_set_keymap("n", "<C-j>", "<C-W>j", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-k>", "<C-W>k", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-h>", "<C-W>h", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<C-l>", "<C-W>l", { noremap = true })
 
 -- Terminal
 vim.api.nvim_set_keymap("n", "T", ":term ++close<CR>", { noremap = true, silent = true })

@@ -104,8 +104,17 @@
         plugin = hop-nvim;
         config = toLuaFile ./nvim/plugin/hop.lua;
       }
+      {
+        plugin = telescope-nvim;
+        config = toLuaFile ./nvim/plugin/telescope.lua;
+      }
 
       vim-nix
+      vim-nix
+      plenary-nvim
+      telescope-fzf-native-nvim
+      telescope-ui-select-nvim
+      nvim-web-devicons
     ];
 
     extraLuaConfig = ''
