@@ -121,15 +121,6 @@ vim.keymap.set("n", "<C-j>", "<C-W>j", { noremap = true, desc = "Move to the win
 vim.keymap.set("n", "<C-k>", "<C-W>k", { noremap = true, desc = "Move to the window above" })
 vim.keymap.set("n", "<C-h>", "<C-W>h", { noremap = true, desc = "Move to the window on the left" })
 vim.keymap.set("n", "<C-l>", "<C-W>l", { noremap = true, desc = "Move to the window on the right" })
--- vim.api.nvim_set_keymap("n", "<C-j>", "<C-W>j", { noremap = true })
--- vim.api.nvim_set_keymap("n", "<C-k>", "<C-W>k", { noremap = true })
--- vim.api.nvim_set_keymap("n", "<C-h>", "<C-W>h", { noremap = true })
--- vim.api.nvim_set_keymap("n", "<C-l>", "<C-W>l", { noremap = true })
-
--- Terminal
--- vim.api.nvim_set_keymap("n", "T", ":term ++close<CR>", { noremap = true, silent = true })
-
--- vim.api.nvim_set_keymap("n", "<leader>e", ":exit<CR>", { noremap = true, silent = true })
 
 -- Copy/Paste/Cut
 if vim.fn.has("unnamedplus") == 1 then

@@ -5,6 +5,8 @@
     enable = true;
   };
 
+  git = import ./git.nix { inherit pkgs; };
+
   direnv = {
     enable = true;
     enableZshIntegration = true;
