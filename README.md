@@ -1,4 +1,4 @@
-# 🏠 Home
+# 🏠 Lakay
 
 Nix flake containing basic binaries and collection of dotfiles.
 
