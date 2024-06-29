@@ -20,4 +20,7 @@ Simply add a new `pkg` to array and run the following in your terminal:
 ```bash
 home-manager switch --flake .
 ```
-> 🔍 [`nix pkg repository`](https://search.nixos.org/packages) 
+
+## Helpful links
+- [`nix pkg repository`](https://search.nixos.org/packages)
+- [`home-manager options`](https://home-manager-options.extranix.com/) 
