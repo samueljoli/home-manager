@@ -8,8 +8,8 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-	plugin-cyberpunk.url = "github:samueljoli/cyberpunk.nvim";
-	plugin-cyberpunk.flake = false;
+        plugin-cyberpunk.url = "github:samueljoli/cyberpunk.nvim";
+        plugin-cyberpunk.flake = false;
     };
 
     outputs = {nixpkgs, home-manager, ...}@inputs: {
@@ -21,7 +21,7 @@
 
                 modules = [ ./home.nix ]; # Defined later
 
-		extraSpecialArgs = { inherit inputs; };
+                extraSpecialArgs = { inherit inputs; };
             };
         };
     };

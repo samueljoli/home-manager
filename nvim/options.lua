@@ -1,6 +1,7 @@
 -- -- --------------------------------------------------------------------------
 -- General settings
 -- -----------------------------------------------------------------------------
+print("Options loaded")
 
 -- Leader
 vim.g.mapleader = ' '
@@ -126,9 +127,9 @@ vim.keymap.set("n", "<C-l>", "<C-W>l", { noremap = true, desc = "Move to the win
 -- vim.api.nvim_set_keymap("n", "<C-l>", "<C-W>l", { noremap = true })
 
 -- Terminal
-vim.api.nvim_set_keymap("n", "T", ":term ++close<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "T", ":term ++close<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<leader>e", ":exit<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>e", ":exit<CR>", { noremap = true, silent = true })
 
 -- Copy/Paste/Cut
 if vim.fn.has("unnamedplus") == 1 then
@@ -139,4 +140,7 @@ if vim.fn.has("macunix") == 1 then
     vim.api.nvim_set_keymap("v", "<C-c>", ":w !pbcopy<CR><CR>", { noremap = true })
 end
 
-vim.api.nvim_set_keymap("n", "<Leader>sh", ":!<Space>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>sh", ":!<Space>", { noremap = true })
+-- vim.keymap.set("n", "<leader>sf", ":Telescope find_files", { noremap = true, desc = "[S]earch [F]iles" })
+
+-- vim.keymap.set('n', '<leader>zf', ":Telescope find_files<cr>", { desc = '[S]earch [F]iles' })

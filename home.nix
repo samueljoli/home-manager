@@ -1,22 +1,14 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "sjoli";
-  home.homeDirectory = "/Users/sjoli";
+  home.homeDirectory = "/Users/sjoli";  # paths that will be managed by home-manager
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "23.11"; # Home Manager release that your configuration is compatible with.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = [
     # Networking
     pkgs.oha # ----------- HTTP load generator
@@ -27,6 +19,7 @@
     pkgs.fzf # ----------- A command-line fuzzy finder written in Go
     pkgs.ripgrep # ------------ grep
     pkgs.yazi # ---------- Terminal file manager
+    pkgs.just
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -88,6 +81,12 @@
     ];
   };
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   programs.neovim =
   let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
@@ -99,6 +98,9 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    extraLuaConfig = ''
+      ${builtins.readFile ./nvim/options.lua}
+    '';
     plugins = with pkgs.vimPlugins; [
       {
         plugin = hop-nvim;
@@ -108,17 +110,13 @@
         plugin = telescope-nvim;
         config = toLuaFile ./nvim/plugin/telescope.lua;
       }
+      telescope-fzf-native-nvim
+      telescope-ui-select-nvim
 
       vim-nix
       vim-nix
       plenary-nvim
-      telescope-fzf-native-nvim
-      telescope-ui-select-nvim
       nvim-web-devicons
     ];
-
-    extraLuaConfig = ''
-    	${builtins.readFile ./nvim/options.lua}
-    '';
   };
 }
