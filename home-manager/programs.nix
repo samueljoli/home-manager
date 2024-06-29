@@ -12,4 +12,8 @@
   };
 
   neovim = import ./neovim/default.nix { inherit (pkgs) vimPlugins; };
+
+  starship = import ./starship.nix { inherit pkgs; };
+
+  zsh = import ./zsh.nix { inherit pkgs; };
 }
