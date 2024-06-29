@@ -13,13 +13,14 @@
     };
 
     outputs = {nixpkgs, home-manager, ...}@inputs: {
+
         defaultPackage.aarch64-darwin = home-manager.defaultPackage.aarch64-darwin;
 
         homeConfigurations = {
             "sjoli" = home-manager.lib.homeManagerConfiguration {
                 pkgs = import nixpkgs { system = "aarch64-darwin"; };
 
-                modules = [ ./home.nix ]; # Defined later
+                modules = [ ./home-manager/default.nix ];
 
                 extraSpecialArgs = { inherit inputs; };
             };
