@@ -1,5 +1,7 @@
 # 🏠 Lakay
+> Lakay is the word for home in Haitian creole 🇭🇹
 
+## Overview
 Nix flake containing basic binaries and collection of dotfiles.
 
 ## Installation
