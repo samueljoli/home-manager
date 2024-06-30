@@ -7,7 +7,7 @@
     homeDirectory = "/Users/sjoli";  # paths that will be managed by home-manager
     stateVersion = "23.11";
     sessionVariables = {
-      # NOTE: What should be here
+      GPG_TTY = "${pkgs.coreutils}/bin/tty";
     };
     packages = import ./packages.nix { inherit pkgs; };
   };
