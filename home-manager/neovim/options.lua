@@ -1,7 +1,6 @@
 -- -- --------------------------------------------------------------------------
 -- General settings
 -- -----------------------------------------------------------------------------
-print("Options loaded")
 
 -- Leader
 vim.g.mapleader = ' '
@@ -130,8 +129,3 @@ if vim.fn.has("macunix") == 1 then
     vim.api.nvim_set_keymap("v", "<C-x>", ":!pbcopy<CR>", { noremap = true })
     vim.api.nvim_set_keymap("v", "<C-c>", ":w !pbcopy<CR><CR>", { noremap = true })
 end
-
--- vim.api.nvim_set_keymap("n", "<Leader>sh", ":!<Space>", { noremap = true })
--- vim.keymap.set("n", "<leader>sf", ":Telescope find_files", { noremap = true, desc = "[S]earch [F]iles" })
-
--- vim.keymap.set('n', '<leader>zf', ":Telescope find_files<cr>", { desc = '[S]earch [F]iles' })

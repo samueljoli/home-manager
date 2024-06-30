@@ -12,23 +12,21 @@ in
   vimdiffAlias = true;
   extraLuaConfig = ''
     ${builtins.readFile ./options.lua}
+    ${builtins.readFile ./keymaps.lua}
+    ${builtins.readFile ./hop.lua}
+    ${builtins.readFile ./telescope.lua}
+    ${builtins.readFile ./comment.lua}
   '';
 
   plugins = with vimPlugins; [
-    {
-      plugin = hop-nvim;
-      config = toLuaFile ./hop.lua;
-    }
-    {
-      plugin = telescope-nvim;
-      config = toLuaFile ./telescope.lua;
-    }
-    telescope-fzf-native-nvim
-    telescope-ui-select-nvim
-
-    vim-nix
-    vim-nix
-    plenary-nvim
+    comment-nvim
+    hop-nvim
     nvim-web-devicons
+    plenary-nvim
+    telescope-fzf-native-nvim
+    telescope-nvim
+    telescope-ui-select-nvim
+    vim-nix
+    vim-nix
   ];
 }
