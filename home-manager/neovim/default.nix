@@ -17,6 +17,7 @@ in
     ${builtins.readFile ./telescope.lua}
     ${builtins.readFile ./comment.lua}
     ${builtins.readFile ./gitsigns.lua}
+    ${builtins.readFile ./yazi.lua}
   '';
 
   plugins = with vimPlugins; [
@@ -30,5 +31,6 @@ in
     telescope-ui-select-nvim
     vim-nix
     vim-nix
+    vimPlugins.foreign-yazi-nvim
   ];
 }

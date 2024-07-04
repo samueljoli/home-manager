@@ -52,11 +52,28 @@
         "type": "github"
       }
     },
+    "plugin-yazi-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720016649,
+        "narHash": "sha256-PWpFsmpthYREJI/3NRIKb1Vb9lEv3xeSO+MNXHzyUSg=",
+        "owner": "mikavilpas",
+        "repo": "yazi.nvim",
+        "rev": "a2f7832af7462c79d57777dd8c36ad0edfb84b39",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mikavilpas",
+        "repo": "yazi.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "plugin-cyberpunk": "plugin-cyberpunk"
+        "plugin-cyberpunk": "plugin-cyberpunk",
+        "plugin-yazi-nvim": "plugin-yazi-nvim"
       }
     }
   },
