@@ -10,6 +10,8 @@
 
         plugin-cyberpunk.url = "github:samueljoli/cyberpunk.nvim";
         plugin-cyberpunk.flake = false;
+        plugin-yazi-nvim.url = "github:mikavilpas/yazi.nvim";
+        plugin-yazi-nvim.flake = false;
     };
 
     outputs = {nixpkgs, home-manager, ...}@inputs: {

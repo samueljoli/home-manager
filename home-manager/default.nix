@@ -11,5 +11,17 @@
     };
     packages = import ./packages.nix { inherit pkgs; };
   };
+  nixpkgs = {
+    overlays = [
+      (final: prev: {
+        vimPlugins = prev.vimPlugins // {
+          own-yazi-nvim = prev.vimUtils.buildVimPlugin {
+            name = "yazi";
+            src = inputs.plugin-yazi-nvim;
+          };
+        };
+      })
+    ];
+  };
   programs = import ./programs.nix { inherit pkgs; };
 }
