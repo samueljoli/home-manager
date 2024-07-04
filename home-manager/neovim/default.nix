@@ -16,10 +16,12 @@ in
     ${builtins.readFile ./hop.lua}
     ${builtins.readFile ./telescope.lua}
     ${builtins.readFile ./comment.lua}
+    ${builtins.readFile ./gitsigns.lua}
   '';
 
   plugins = with vimPlugins; [
     comment-nvim
+    gitsigns-nvim
     hop-nvim
     nvim-web-devicons
     plenary-nvim
