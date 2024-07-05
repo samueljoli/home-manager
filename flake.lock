@@ -36,7 +36,7 @@
         "type": "github"
       }
     },
-    "plugin-cyberpunk": {
+    "plugin-cyberpunk-nvim": {
       "flake": false,
       "locked": {
         "lastModified": 1678292853,
@@ -72,7 +72,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "plugin-cyberpunk": "plugin-cyberpunk",
+        "plugin-cyberpunk-nvim": "plugin-cyberpunk-nvim",
         "plugin-yazi-nvim": "plugin-yazi-nvim"
       }
     }

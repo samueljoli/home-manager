@@ -8,8 +8,10 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        plugin-cyberpunk.url = "github:samueljoli/cyberpunk.nvim";
-        plugin-cyberpunk.flake = false;
+        plugin-cyberpunk-nvim = {
+          url = "github:samueljoli/cyberpunk.nvim";
+          flake = false;
+        };
 
         plugin-yazi-nvim = {
           url = "github:mikavilpas/yazi.nvim";

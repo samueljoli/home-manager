@@ -19,9 +19,14 @@
             name = "yazi";
             src = inputs.plugin-yazi-nvim;
           };
+          foreign-cyberpunk-nvim = prev.vimUtils.buildVimPlugin {
+            name = "cyberpunk";
+            src = inputs.plugin-cyberpunk-nvim;
+          };
         };
       })
     ];
   };
+
   programs = import ./programs.nix { inherit pkgs; };
 }

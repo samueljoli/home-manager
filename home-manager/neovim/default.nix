@@ -18,6 +18,7 @@ in
     ${builtins.readFile ./comment.lua}
     ${builtins.readFile ./gitsigns.lua}
     ${builtins.readFile ./yazi.lua}
+    ${builtins.readFile ./cyberpunk.lua}
   '';
 
   plugins = with vimPlugins; [
@@ -32,5 +33,6 @@ in
     vim-nix
     vim-nix
     vimPlugins.foreign-yazi-nvim
+    vimPlugins.foreign-cyberpunk-nvim
   ];
 }
