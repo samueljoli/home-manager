@@ -19,6 +19,7 @@ in
     ${builtins.readFile ./gitsigns.lua}
     ${builtins.readFile ./yazi.lua}
     ${builtins.readFile ./cyberpunk.lua}
+    ${builtins.readFile ./colorizer.lua}
   '';
 
   plugins = with vimPlugins; [
@@ -34,5 +35,6 @@ in
     vim-nix
     vimPlugins.foreign-yazi-nvim
     vimPlugins.foreign-cyberpunk-nvim
+    nvim-colorizer-lua
   ];
 }
