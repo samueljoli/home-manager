@@ -7,14 +7,16 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-
         plugin-cyberpunk-nvim = {
           url = "github:samueljoli/cyberpunk.nvim";
           flake = false;
         };
-
         plugin-yazi-nvim = {
           url = "github:mikavilpas/yazi.nvim";
+          flake = false;
+        };
+        plugin-heirline-components = {
+          url = "github:Zeioth/heirline-components.nvim";
           flake = false;
         };
     };

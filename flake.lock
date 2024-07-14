@@ -52,6 +52,22 @@
         "type": "github"
       }
     },
+    "plugin-heirline-components": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1718209926,
+        "narHash": "sha256-lKyW8o0xYeq5bzCgImAbUHjnU2hJsbuzSQN9vmupFnU=",
+        "owner": "Zeioth",
+        "repo": "heirline-components.nvim",
+        "rev": "2cb2702fe05479390b7cbd5cf97f3c3388270d63",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Zeioth",
+        "repo": "heirline-components.nvim",
+        "type": "github"
+      }
+    },
     "plugin-yazi-nvim": {
       "flake": false,
       "locked": {
@@ -73,6 +89,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "plugin-cyberpunk-nvim": "plugin-cyberpunk-nvim",
+        "plugin-heirline-components": "plugin-heirline-components",
         "plugin-yazi-nvim": "plugin-yazi-nvim"
       }
     }

@@ -20,9 +20,11 @@ in
     ${builtins.readFile ./yazi.lua}
     ${builtins.readFile ./cyberpunk.lua}
     ${builtins.readFile ./colorizer.lua}
+    ${builtins.readFile ./heirline.lua}
   '';
 
   plugins = with vimPlugins; [
+    vimPlugins.foreign-heirline-components
     comment-nvim
     gitsigns-nvim
     hop-nvim
@@ -31,6 +33,7 @@ in
     telescope-fzf-native-nvim
     telescope-nvim
     telescope-ui-select-nvim
+    heirline-nvim
     vim-nix
     vim-nix
     vimPlugins.foreign-yazi-nvim
