@@ -41,5 +41,6 @@ in
     vimPlugins.foreign-cyberpunk-nvim
     nvim-colorizer-lua
     nvim-treesitter.withAllGrammars
+    nvim-treesitter-textobjects
   ];
 }
