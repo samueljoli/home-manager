@@ -21,6 +21,7 @@ in
     ${builtins.readFile ./cyberpunk.lua}
     ${builtins.readFile ./colorizer.lua}
     ${builtins.readFile ./heirline.lua}
+    ${builtins.readFile ./treesitter.lua}
   '';
 
   plugins = with vimPlugins; [
@@ -39,5 +40,6 @@ in
     vimPlugins.foreign-yazi-nvim
     vimPlugins.foreign-cyberpunk-nvim
     nvim-colorizer-lua
+    nvim-treesitter.withAllGrammars
   ];
 }
