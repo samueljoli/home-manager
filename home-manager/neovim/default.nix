@@ -14,34 +14,40 @@ in
   extraLuaConfig = ''
     ${builtins.readFile ./options.lua}
     ${builtins.readFile ./keymaps.lua}
+    ${builtins.readFile ./cyberpunk.lua}
+    ${builtins.readFile ./treesitter.lua}
     ${builtins.readFile ./hop.lua}
     ${builtins.readFile ./telescope.lua}
+    ${builtins.readFile ./yazi.lua}
     ${builtins.readFile ./comment.lua}
     ${builtins.readFile ./gitsigns.lua}
-    ${builtins.readFile ./yazi.lua}
-    ${builtins.readFile ./cyberpunk.lua}
     ${builtins.readFile ./colorizer.lua}
-    ${builtins.readFile ./heirline.lua}
-    ${builtins.readFile ./treesitter.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [
-    pkgs.vimPlugins.foreign-heirline-components
-    comment-nvim
-    gitsigns-nvim
+
+    pkgs.vimPlugins.foreign-cyberpunk-nvim
+
+    nvim-treesitter.withAllGrammars
+    nvim-treesitter-textobjects
+
     hop-nvim
+
     nvim-web-devicons
     plenary-nvim
     telescope-fzf-native-nvim
     telescope-nvim
     telescope-ui-select-nvim
-    heirline-nvim
-    vim-nix
-    vim-nix
+
     pkgs.vimPlugins.foreign-yazi-nvim
-    pkgs.vimPlugins.foreign-cyberpunk-nvim
+
+    comment-nvim
+    gitsigns-nvim
     nvim-colorizer-lua
-    nvim-treesitter.withAllGrammars
-    nvim-treesitter-textobjects
+
+    pkgs.vimPlugins.foreign-heirline-components
+    heirline-nvim
+
+    vim-nix
   ];
 }
