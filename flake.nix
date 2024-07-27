@@ -11,6 +11,10 @@
           url = "github:samueljoli/cyberpunk.nvim";
           flake = false;
         };
+        plugin-gruvbox-nvim = {
+          url = "github:ellisonleao/gruvbox.nvim";
+          flake = false;
+        };
         plugin-yazi-nvim = {
           url = "github:mikavilpas/yazi.nvim";
           flake = false;

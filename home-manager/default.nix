@@ -23,6 +23,10 @@
             name = "cyberpunk";
             src = inputs.plugin-cyberpunk-nvim;
           };
+          foreign-gruvbox-nvim = prev.vimUtils.buildVimPlugin {
+            name = "gruvbox";
+            src = inputs.plugin-gruvbox-nvim;
+          };
           foreign-heirline-components = prev.vimUtils.buildVimPlugin {
             name = "heirline-components";
             src = inputs.plugin-heirline-components;

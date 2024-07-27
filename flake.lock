@@ -52,6 +52,22 @@
         "type": "github"
       }
     },
+    "plugin-gruvbox-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720105192,
+        "narHash": "sha256-+t9jdpvykfBDgXelDc/3bAOCN7cmu6/TwFoZy47zKUM=",
+        "owner": "ellisonleao",
+        "repo": "gruvbox.nvim",
+        "rev": "7a1b23e4edf73a39642e77508ee6b9cbb8c60f9e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ellisonleao",
+        "repo": "gruvbox.nvim",
+        "type": "github"
+      }
+    },
     "plugin-heirline-components": {
       "flake": false,
       "locked": {
@@ -89,6 +105,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "plugin-cyberpunk-nvim": "plugin-cyberpunk-nvim",
+        "plugin-gruvbox-nvim": "plugin-gruvbox-nvim",
         "plugin-heirline-components": "plugin-heirline-components",
         "plugin-yazi-nvim": "plugin-yazi-nvim"
       }
