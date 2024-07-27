@@ -1,4 +1,4 @@
-{ vimPlugins }:
+{ inputs, pkgs }:
 
 let
   toLua = str: "lua << EOF\n${str}\nEOF\n";
@@ -6,6 +6,7 @@ let
 in
 {
   enable = true;
+  package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   defaultEditor = true;
   viAlias = true;
   vimAlias = true;
@@ -24,8 +25,8 @@ in
     ${builtins.readFile ./treesitter.lua}
   '';
 
-  plugins = with vimPlugins; [
-    vimPlugins.foreign-heirline-components
+  plugins = with pkgs.vimPlugins; [
+    pkgs.vimPlugins.foreign-heirline-components
     comment-nvim
     gitsigns-nvim
     hop-nvim
@@ -37,8 +38,8 @@ in
     heirline-nvim
     vim-nix
     vim-nix
-    vimPlugins.foreign-yazi-nvim
-    vimPlugins.foreign-cyberpunk-nvim
+    pkgs.vimPlugins.foreign-yazi-nvim
+    pkgs.vimPlugins.foreign-cyberpunk-nvim
     nvim-colorizer-lua
     nvim-treesitter.withAllGrammars
     nvim-treesitter-textobjects

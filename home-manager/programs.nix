@@ -1,4 +1,4 @@
-{ pkgs }:
+{ inputs, pkgs, ... }:
 
 {
   home-manager = {
@@ -13,7 +13,10 @@
     nix-direnv.enable = true;
   };
 
-  neovim = import ./neovim/default.nix { inherit (pkgs) vimPlugins; };
+  neovim = import ./neovim/default.nix {
+    inherit pkgs;
+    inherit inputs;
+  };
 
   starship = import ./starship.nix { inherit pkgs; };
 
