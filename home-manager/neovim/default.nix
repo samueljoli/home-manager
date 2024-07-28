@@ -23,9 +23,14 @@ in
     ${builtins.readFile ./gitsigns.lua}
     ${builtins.readFile ./colorizer.lua}
     ${builtins.readFile ./heirline.lua}
+    ${builtins.readFile ./lazydev.lua}
+    ${builtins.readFile ./lsp.lua}
+    ${builtins.readFile ./conform.lua}
+    ${builtins.readFile ./cmp.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [
+    vim-nix
 
     pkgs.vimPlugins.foreign-cyberpunk-nvim
 
@@ -49,6 +54,23 @@ in
     pkgs.vimPlugins.foreign-heirline-components
     heirline-nvim
 
-    vim-nix
+    mason-nvim
+    mason-lspconfig-nvim
+    mason-tool-installer-nvim
+    cmp-nvim-lsp
+    fidget-nvim
+    pkgs.vimPlugins.foreign-lazydev-nvim
+    pkgs.vimPlugins.foreign-luvit-meta
+    nvim-lspconfig
+
+    conform-nvim
+
+    cmp-path
+    cmp-nvim-lsp
+    cmp_luasnip
+    luasnip
+    nvim-cmp
   ];
+
+  extraLuaPackages = ps: [ ps.jsregexp ];
 }

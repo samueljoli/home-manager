@@ -12,8 +12,6 @@ require('telescope').setup({
   }
 })
 
-local opts = { noremap = true, silent = true }
-
 -- See `:help telescope.builtin`
 local builtin = require 'telescope.builtin'
 

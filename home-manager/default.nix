@@ -32,6 +32,14 @@
             name = "heirline-components";
             src = inputs.plugin-heirline-components;
           };
+          foreign-lazydev-nvim = prev.vimUtils.buildVimPlugin {
+            name = "lazydev";
+            src = inputs.plugin-lazydev-nvim;
+          };
+          foreign-luvit-meta = prev.vimUtils.buildVimPlugin {
+            name = "luvit-meta";
+            src = inputs.plugin-luvit-meta;
+          };
         };
       })
     ];

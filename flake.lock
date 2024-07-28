@@ -284,6 +284,38 @@
         "type": "github"
       }
     },
+    "plugin-lazydev-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1721897868,
+        "narHash": "sha256-D5gP2rVPYoWc8hslTrH7Z90cE7XEu+tfkD6FZzY/iPk=",
+        "owner": "folke",
+        "repo": "lazydev.nvim",
+        "rev": "491452cf1ca6f029e90ad0d0368848fac717c6d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "lazydev.nvim",
+        "type": "github"
+      }
+    },
+    "plugin-luvit-meta": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1705776742,
+        "narHash": "sha256-zAAptV/oLuLAAsa2zSB/6fxlElk4+jNZd/cPr9oxFig=",
+        "owner": "Bilal2453",
+        "repo": "luvit-meta",
+        "rev": "ce76f6f6cdc9201523a5875a4471dcfe0186eb60",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Bilal2453",
+        "repo": "luvit-meta",
+        "type": "github"
+      }
+    },
     "plugin-yazi-nvim": {
       "flake": false,
       "locked": {
@@ -308,6 +340,8 @@
         "plugin-cyberpunk-nvim": "plugin-cyberpunk-nvim",
         "plugin-gruvbox-nvim": "plugin-gruvbox-nvim",
         "plugin-heirline-components": "plugin-heirline-components",
+        "plugin-lazydev-nvim": "plugin-lazydev-nvim",
+        "plugin-luvit-meta": "plugin-luvit-meta",
         "plugin-yazi-nvim": "plugin-yazi-nvim"
       }
     }
