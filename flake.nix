@@ -26,6 +26,14 @@
           url = "github:Zeioth/heirline-components.nvim";
           flake = false;
         };
+        plugin-lazydev-nvim = {
+          url = "github:folke/lazydev.nvim";
+          flake = false;
+        };
+        plugin-luvit-meta = {
+          url = "github:Bilal2453/luvit-meta";
+          flake = false;
+        };
     };
 
     outputs = {nixpkgs, home-manager, ...}@inputs: {
