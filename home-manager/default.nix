@@ -13,6 +13,7 @@
   };
   nixpkgs = {
     overlays = [
+      inputs.neovim-nightly-overlay.overlays.default
       (final: prev: {
         vimPlugins = prev.vimPlugins // {
           foreign-yazi-nvim = prev.vimUtils.buildVimPlugin {
@@ -36,5 +37,8 @@
     ];
   };
 
-  programs = import ./programs.nix { inherit pkgs; };
+  programs = import ./programs.nix {
+    inherit pkgs;
+    inherit inputs;
+  };
 }
