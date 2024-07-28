@@ -22,6 +22,7 @@ in
     ${builtins.readFile ./comment.lua}
     ${builtins.readFile ./gitsigns.lua}
     ${builtins.readFile ./colorizer.lua}
+    ${builtins.readFile ./heirline.lua}
   '';
 
   plugins = with pkgs.vimPlugins; [

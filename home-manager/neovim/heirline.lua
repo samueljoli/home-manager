@@ -4,8 +4,6 @@ local heirline_components = require "heirline-components.all"
 heirline_components.init.subscribe_to_events()
 heirline.load_colors(heirline_components.hl.get_colors())
 
-vim.islist = vim.tbl_islist -- NOTE: until we update to neovim 0.10
-
 heirline.setup({
   statusline = {
     hl = { fg = "fg", bg = "bg" },
